@@ -1,63 +1,47 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mutabaah Apps</title>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MUTABA'AH RAMADHAN</title>
+  <link rel="icon" href="https://mentariilmu.org/logo.png" />
   <style>
-    * {
+    html,
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      width: 100%;
+      height: 100%;
+      background-color: #eee;
+      overflow: hidden;
+      /* Mencegah scroll ganda */
     }
 
-    body {
-      background-color: #f1f5f9;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-    }
-
-    header {
-      background: #15803d;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 18px;
+    .iframe-container {
+      width: 100%;
+      height: 100dvh;
+      /* Menggunakan dvh agar pas di mobile browser */
+      overflow: hidden;
     }
 
     iframe {
-      flex: 1;
+      display: block;
       width: 100%;
+      height: 100%;
       border: none;
-    }
-
-    .loading {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 16px;
-      color: #15803d;
     }
   </style>
 </head>
 
 <body>
-
-  <header>
-    Sistem Mutabaah
-  </header>
-
-  <div class="loading" id="loadingText">Memuat aplikasi...</div>
-
-  <iframe 
-    src="https://script.google.com/macros/s/AKfycbxn-y8E8A3VzY-TipdlICow8JUHtR9xPMeyJ2RWdC8inRHbYDDR5MtLJWyKdlLL6XIO/exec"
-    onload="document.getElementById('loadingText').style.display='none';">
-  </iframe>
-
+  <div class="iframe-container">
+    <iframe id="app"
+      src="https://script.google.com/macros/s/AKfycbxn-y8E8A3VzY-TipdlICow8JUHtR9xPMeyJ2RWdC8inRHbYDDR5MtLJWyKdlLL6XIO/exec"
+      scrolling="yes" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"
+      allow="fullscreen; camera; microphone; display-capture; geolocation;">
+    </iframe>
+  </div>
 </body>
+
 </html>
